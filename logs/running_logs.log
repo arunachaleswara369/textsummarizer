@@ -1,0 +1,121 @@
+[2023-07-30 17:59:29,568: INFO: server: Started server process [65424]]
+[2023-07-30 17:59:29,568: INFO: on: Waiting for application startup.]
+[2023-07-30 17:59:29,568: INFO: on: Application startup complete.]
+[2023-07-30 17:59:29,568: ERROR: server: [Errno 10048] error while attempting to bind on address ('0.0.0.0', 8080): only one usage of each socket address (protocol/network address/port) is normally permitted]
+[2023-07-30 17:59:29,568: INFO: on: Waiting for application shutdown.]
+[2023-07-30 17:59:29,568: INFO: on: Application shutdown complete.]
+[2023-07-30 18:00:01,673: INFO: server: Started server process [64888]]
+[2023-07-30 18:00:01,673: INFO: on: Waiting for application startup.]
+[2023-07-30 18:00:01,689: INFO: on: Application startup complete.]
+[2023-07-30 18:00:01,690: INFO: server: Uvicorn running on http://0.0.0.0:8082 (Press CTRL+C to quit)]
+[2023-07-30 18:00:19,422: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-30 18:00:19,422: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-30 18:00:19,422: INFO: common: created directory at: artifacts]
+[2023-07-30 18:00:19,422: INFO: common: created directory at: artifacts/model_evaluation]
+[2023-07-30 18:00:19,422: ERROR: h11_impl: Exception in ASGI application
+]
+Traceback (most recent call last):
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 404, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "app.py", line 41, in predict_route
+    raise e
+  File "app.py", line 38, in predict_route
+    text = obj.predict(text)
+  File "c:\nlp\text-summarization-nlp-project\src\textSummarizer\pipeline\prediction.py", line 13, in predict
+    tokenizer = AutoTokenizer.from_pretrained(self.config.tokenizer_path)
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\transformers\models\auto\tokenization_auto.py", line 652, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\transformers\models\auto\tokenization_auto.py", line 496, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\transformers\utils\hub.py", line 417, in cached_file
+    resolved_file = hf_hub_download(
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\huggingface_hub\utils\_validators.py", line 110, in _inner_fn
+    validate_repo_id(arg_value)
+  File "C:\Users\aruna\.conda\envs\textS\lib\site-packages\huggingface_hub\utils\_validators.py", line 158, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.utils._validators.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': 'artifacts/model_trainer/tokenizer'. Use `repo_type` argument if needed.
+[2023-07-30 18:00:42,618: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-07-30 18:00:42,635: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-30 18:00:42,635: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-30 18:00:42,635: INFO: common: created directory at: artifacts]
+[2023-07-30 18:00:42,635: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-07-30 18:00:45,283: INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: 98B2:4BE0:FB20A:125F39:64C657F5
+Accept-Ranges: bytes
+Date: Sun, 30 Jul 2023 12:30:46 GMT
+Via: 1.1 varnish
+X-Served-By: cache-qpg1260-QPG
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1690720245.278008,VS0,VE746
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: 8eb5a521f50da3ede54bc4f8160837f93c2cb18e
+Expires: Sun, 30 Jul 2023 12:35:46 GMT
+Source-Age: 0
+
+]
+[2023-07-30 18:00:45,634: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-07-30 18:00:45,634: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2023-07-30 18:00:45,652: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-30 18:00:45,652: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-30 18:00:45,664: INFO: common: created directory at: artifacts]
+[2023-07-30 18:00:45,666: INFO: common: created directory at: artifacts/data_validation]
+[2023-07-30 18:00:45,667: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2023-07-30 18:00:45,667: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2023-07-30 18:00:45,686: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-30 18:00:45,699: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-30 18:00:45,700: INFO: common: created directory at: artifacts]
+[2023-07-30 18:00:45,700: INFO: common: created directory at: artifacts/data_transformation]
+[2023-07-30 18:01:01,120: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2023-07-30 18:01:01,120: INFO: main: *******************]
+[2023-07-30 18:01:01,120: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2023-07-30 18:01:01,130: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-30 18:01:01,130: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-30 18:01:01,145: INFO: common: created directory at: artifacts]
+[2023-07-30 18:01:01,147: INFO: common: created directory at: artifacts/model_trainer]

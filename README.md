@@ -17,9 +17,8 @@
 
 Clone the repository
 
-```bash
-[https://github.com/entbappy/End-to-end-Text-Summarization](https://github.com/arunachaleswara369/textsummarizer.git)
-```
+https://github.com/arunachaleswara369/textsummarizer.git
+
 ### STEP 01- Create a conda environment after opening the repository
 
 ```bash
